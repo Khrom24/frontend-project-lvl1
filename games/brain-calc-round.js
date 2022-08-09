@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 const brainCalcRound = () => {
-  const action = ['+', '-', '*'][Math.round(3 * Math.random())]; // операция
+  const action = ['+', '-', '*'][Math.floor(3 * Math.random())]; // операция
   const randomNum1 = Math.round(Math.random() * 100); // рандомное первое число
   const randomNum2 = Math.round(Math.random() * 100); // рандомное второе число
   const expression = `${randomNum1} ${action} ${randomNum2}`; // собираем в едное выражение
