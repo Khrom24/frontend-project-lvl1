@@ -5,28 +5,26 @@ const isPrime = (number) => {
     return false;
   }
 
-  let divider = 2;
-
-  while (divider <= number / 2) {
-    if (number % divider === 0) {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
       return false;
     }
-
-    divider += 1;
   }
 
   return true;
 };
 
-export default function brainPrimeRound() {
-  const randomNumber = Math.ceil(Math.random() * 100);
-  console.log(`Question: ${randomNumber}`);
+const brainPrimeRound = () => {
+  const roundNum = Math.ceil(Math.random() * 100);
+  console.log(`Question: ${roundNum}`);
   const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+  const correctAnswer = isPrime(roundNum) ? 'yes' : 'no';
   if (answer === correctAnswer) {
     console.log('Correct!');
     return 'correct';
   }
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
   return 'incorrect';
-}
+};
+
+export default brainPrimeRound;

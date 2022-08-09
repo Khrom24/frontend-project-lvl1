@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
 
-export default function brainCalcRound() {
-  const randomNumber1 = Math.ceil(Math.random() * 100);
-  const randomNumber2 = Math.ceil(Math.random() * 100);
-  console.log(`Question: ${randomNumber1} ${randomNumber2}`);
+const brainCalcRound = () => {
+  const roundNum1 = Math.ceil(Math.random() * 100);
+  const roundNum2 = Math.ceil(Math.random() * 100);
+  console.log(`Question: ${roundNum1} ${roundNum2}`);
   const answer = readlineSync.question('Your answer: ');
-  let x = randomNumber1;
-  let y = randomNumber2;
-  let t = randomNumber2;
+  let x = roundNum1;
+  let y = roundNum2;
+  let t = roundNum2;
   while (y > 0) {
     t = y;
     y = x % y;
@@ -20,4 +20,6 @@ export default function brainCalcRound() {
   }
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
   return 'incorrect';
-}
+};
+
+export default brainCalcRound;

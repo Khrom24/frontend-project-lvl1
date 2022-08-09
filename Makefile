@@ -1,26 +1,26 @@
-install: # to establish dependencies
+install: # установка зависимостей
 	npm ci
 
-brain-games: # to launch the game
+brain-games: # запуск
 	node bin/brain-games.js
 
-brain-even: # to launch the even/odd game
+brain-even: # Проверка на чётность
 	node bin/brain-even.js
 
-brain-calc: # to launch the calculation game
+brain-calc: # Калькулятор
 	node bin/brain-calc.js
 
-brain-gcd: # to launch the gcd game
+brain-gcd: # НОД
 	node bin/brain-gcd.js
 
-brain-progression: # to launch the progression game
+brain-progression: # Арифметическая прогрессия
 	node bin/brain-progression.js
 
-brain-prime: # to launch the progression game
+brain-prime: # Простое ли число
 	node bin/brain-prime.js
 
 publish:
 	npm publish --dry-run
 
-init: # initiate eslint
+init: # Линтер
 	npx eslint .

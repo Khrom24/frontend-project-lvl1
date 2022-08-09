@@ -1,20 +1,21 @@
 import readlineSync from 'readline-sync';
 
-export default function brainCalcRound() {
+const brainCalcRound = () => {
   const action = ['+', '-', '*'][Math.floor(3 * Math.random())];
-  const randomNumber1 = Math.floor(Math.random() * 100);
-  const randomNumber2 = Math.floor(Math.random() * 100);
-  const expression = `${randomNumber1} ${action} ${randomNumber2}`;
+  const randomNum1 = Math.floor(Math.random() * 100);
+  const randomNum2 = Math.floor(Math.random() * 100);
+  const expression = `${randomNum1} ${action} ${randomNum2}`;
   let correctAnswer;
   switch (action) {
     case '+':
-      correctAnswer = randomNumber1 + randomNumber2;
+      correctAnswer = randomNum1 + randomNum2;
       break;
     case '-':
-      correctAnswer = randomNumber1 - randomNumber2;
+      correctAnswer = randomNum1 - randomNum2;
       break;
     default:
-      correctAnswer = randomNumber1 * randomNumber2;
+      correctAnswer = randomNum1 * randomNum2;
+      break;
   }
   console.log(`Question: ${expression}`);
   const answer = readlineSync.question('Your answer: ');
@@ -24,4 +25,6 @@ export default function brainCalcRound() {
   }
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
   return 'incorrect';
-}
+};
+
+export default brainCalcRound;
