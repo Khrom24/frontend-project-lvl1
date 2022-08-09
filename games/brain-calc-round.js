@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
 const brainCalcRound = () => {
-  const action = ['+', '-', '*'][Math.floor(3 * Math.random())];
-  const randomNum1 = Math.floor(Math.random() * 100);
-  const randomNum2 = Math.floor(Math.random() * 100);
-  const expression = `${randomNum1} ${action} ${randomNum2}`;
+  const action = ['+', '-', '*'][Math.round(3 * Math.random())]; //операция
+  const randomNum1 = Math.round(Math.random() * 100); //рандомное первое число
+  const randomNum2 = Math.round(Math.random() * 100); //рандомное второе число
+  const expression = `${randomNum1} ${action} ${randomNum2}`; //собираем в едное выражение
   let correctAnswer;
   switch (action) {
     case '+':
@@ -17,9 +17,9 @@ const brainCalcRound = () => {
       correctAnswer = randomNum1 * randomNum2;
       break;
   }
-  console.log(`Question: ${expression}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (Number(answer) === correctAnswer) {
+  console.log(`Question: ${expression}`); //выводим на экран выражение
+  const answer = readlineSync.question('Your answer: '); 
+  if (Number(answer) === correctAnswer) { //срравниваем ответы
     console.log('Correct!');
     return 'correct';
   }

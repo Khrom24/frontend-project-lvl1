@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
 const brainCalcRound = () => {
-  const noOfNums = Math.floor(Math.random() * 5) + 5;
-  const missingNum = Math.ceil(Math.random() * noOfNums);
-  const firstNum = Math.floor(Math.random() * 100);
-  const progressionStep = Math.floor(Math.random() * 10);
+  const noOfNums = Math.round(Math.random() * 5) + 5; //колличество (если умножить на 10, то найти ответ будет легко)
+  const missingNum = Math.round(Math.random() * noOfNums); //отсутсвующая цифра
+  const firstNum = Math.round(Math.random() * 100); //первый номер
+  const progressionStep = Math.round(Math.random() * 10); //шаг
   const correctAnswer = firstNum + progressionStep * (missingNum - 1);
   const array = [];
   for (let i = 0; i < noOfNums; i += 1) {
@@ -14,7 +14,7 @@ const brainCalcRound = () => {
       array[i] = firstNum + progressionStep * i;
     }
   }
-  const sequence = array.join(' ');
+  const sequence = array.join(' '); //разъединяем пробелами
   console.log(`Question: ${sequence}`);
   const answer = readlineSync.question('Your answer: ');
   if (Number(answer) === correctAnswer) {

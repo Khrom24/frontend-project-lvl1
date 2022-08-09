@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
 
 const brainCalcRound = () => {
-  const randomNum = Math.floor(Math.random() * 100);
-  const correctAnswer = randomNum % 2 === 0 ? 'yes' : 'no';
+  const randomNum = Math.round(Math.random() * 100); //рандомное число
+  const correctAnswer = randomNum % 2 === 0 ? 'yes' : 'no'; //проверяем, четное ли оно
   console.log(`Question: ${randomNum}`);
   const answer = readlineSync.question('Your answer: ');
-  if (answer === correctAnswer) {
+  if (answer === correctAnswer) { //сравниваем ответы
     console.log('Correct!');
     return 'correct';
   }

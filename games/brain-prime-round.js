@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const isPrime = (number) => {
+const isPrime = (number) => { 
   if (number < 2) {
     return false;
   }
@@ -15,11 +15,11 @@ const isPrime = (number) => {
 };
 
 const brainPrimeRound = () => {
-  const roundNum = Math.ceil(Math.random() * 100);
+  const roundNum = Math.round(Math.random() * 100); //рандомный номер
   console.log(`Question: ${roundNum}`);
   const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = isPrime(roundNum) ? 'yes' : 'no';
-  if (answer === correctAnswer) {
+  const correctAnswer = isPrime(roundNum) ? 'yes' : 'no'; //проверяем, четное ли число
+  if (answer === correctAnswer) { //сравниваем ответы
     console.log('Correct!');
     return 'correct';
   }
