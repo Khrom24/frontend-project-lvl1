@@ -3,15 +3,15 @@ import readlineSync from 'readline-sync';
 const brainCalcRound = () => {
   const noOfNums = Math.round(Math.random() * 5) + 5; // колличество
   const missingNum = Math.round(Math.random() * noOfNums); // отсутсвующая цифра
-  const firstNum = Math.round(Math.random() * 100); // первый номер
+  const randomNum1 = Math.round(Math.random() * 100); // первый номер
   const progressionStep = Math.round(Math.random() * 10); // шаг
-  const correctAnswer = firstNum + progressionStep * (missingNum - 1);
+  const correctAnswer = randomNum1 + progressionStep * (missingNum - 1);
   const array = [];
   for (let i = 0; i < noOfNums; i += 1) {
     if (i === missingNum - 1) {
       array[i] = '..';
     } else {
-      array[i] = firstNum + progressionStep * i;
+      array[i] = randomNum1 + progressionStep * i;
     }
   }
   const sequence = array.join(' '); // разъединяем пробелами

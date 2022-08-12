@@ -15,10 +15,10 @@ const isPrime = (number) => {
 };
 
 const brainPrimeRound = () => {
-  const roundNum = Math.round(Math.random() * 100); // рандомный номер
-  console.log(`Question: ${roundNum}`);
+  const randomNum1 = Math.round(Math.random() * 100); // рандомный номер
+  console.log(`Question: ${randomNum1}`);
   const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = isPrime(roundNum) ? 'yes' : 'no'; // проверяем, четное ли число
+  const correctAnswer = isPrime(randomNum1) ? 'yes' : 'no'; // проверяем, четное ли число
   if (answer === correctAnswer) { // сравниваем ответы
     console.log('Correct!');
     return 'correct';

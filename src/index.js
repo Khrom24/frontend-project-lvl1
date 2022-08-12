@@ -15,4 +15,3 @@ const universalGame = (intro, round) => {
 };
 
 export default universalGame;
-
