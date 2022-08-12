@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import round from '../games/brain-prime-round.js';
 import universalGame from '../src/index.js';
 

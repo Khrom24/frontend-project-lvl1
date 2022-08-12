@@ -10,8 +10,8 @@ const universalGame = (intro, round) => {
       console.log(`Let's try again, ${name}!`);
       break;
     }
+    console.log(`Congratulations, ${name}!`);
   }
-  console.log(`Congratulations, ${name}!`);
 };
 
 export default universalGame;
